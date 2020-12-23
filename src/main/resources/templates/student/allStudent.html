@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Dept Code</th>
+        <th>Dept Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="student:${studentDtoList}">
+        <tr>
+            <td th:text="${student.studentId}"></td>
+            <td th:text="${student.studentName}"></td>
+            <td th:text="${student.studentAge}"></td>
+            <td th:text="${student.studentGender}"></td>
+            <td th:text="${student.departmentDto.departmentCode}"></td>
+            <td th:text="${student.departmentDto.departmentName}"></td>
+
+        </tr>
+    </th:block>
+
+    </tbody>
+</table>
+<a th:href="@{/student/getAddStudent}">Add New Student</a><br>
+</body>
+</html>

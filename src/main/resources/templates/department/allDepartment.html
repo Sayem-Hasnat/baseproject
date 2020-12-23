@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Department List</title>
+</head>
+<h2>All Department List</h2>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Code</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="department:${departmentDtoForm}">
+        <tr>
+            <td th:text="${department.departmentId}"></td>
+            <td th:text="${department.departmentName}"></td>
+            <td th:text="${department.departmentCode}"></td>
+        </tr>
+    </th:block>
+
+    </tbody>
+</table>
+<a th:href="@{/department/getAddDepartment}">Add New Department</a><br>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Department</title>
+</head>
+<a th:href="@{/department/getAllDepartment}">DepartmentList</a><br>
+<h2>Add New Department</h2>
+<body>
+<form th:action="@{/department/saveDepartment}" th:object="${departmentDtoForm}" method="post">
+    <input type ="hidden" th:field="*{departmentId}"/>
+    Name:   <input type="text" th:field="*{departmentName}" /><br><br>
+    Code:   <input type="text" th:field="*{departmentCode}" /><br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <h2>Add New Student</h2>
+</head>
+<body>
+<form th:action="@{/student/saveStudent}" th:object="${studentDtoForm}" method="post">
+    <input type="hidden" th:field="*{studentId}"/>
+    Name: <input type="text" th:field="*{studentName}"/><br><br>
+    Age: <input type="text" th:field="*{studentAge}"/><br><br>
+    Gender:
+    <th:block th:each="gender : ${genderList}">
+        <input type="radio" th:field="*{studentGender}" th:value="${gender}">
+        <label th:text="${gender}"></label>
+    </th:block>
+    </br> </br>
+    Department:
+    <select th:field="*{departmentDto.departmentId}">
+
+        <option th:each="department : ${departmentListDto}"
+                th:value="${department.getDepartmentId()}"
+                th:text="${department.getDepartmentCode()}">
+        </option>
+        </th:block>
+    </select>
+    </br> </br>
+
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>
