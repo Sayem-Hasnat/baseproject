@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Student List</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
 </head>
 <body>
-<table>
+<div class="container">
+<table class="table table-success">
     <thead>
     <tr>
         <th>ID</th>
@@ -31,6 +34,9 @@
 
     </tbody>
 </table>
-<a th:href="@{/student/getAddStudent}">Add New Student</a><br>
+</div>
+<div class="container">
+    <a th:href="@{/student/getAddStudent}" class="btn btn-primary stretched-link">Add New Student</a><br>
+</div>
 </body>
 </html>

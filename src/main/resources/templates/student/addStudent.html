@@ -2,8 +2,10 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <title>Add Student</title>
     <h2>Add New Student</h2>
+
 </head>
 <body>
 <form th:action="@{/student/saveStudent}" th:object="${studentDtoForm}" method="post">
@@ -27,7 +29,10 @@
     </select>
     </br> </br>
 
-    <button type="submit">Save</button>
+    <div class="container">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+
 </form>
 
 </body>
