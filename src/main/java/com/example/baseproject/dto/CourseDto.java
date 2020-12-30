@@ -9,5 +9,6 @@ import javax.persistence.Column;
 public class CourseDto {
     private long courseId;
     private String courseName;
+    private String courseCode;
     private StudentDto studentDto;
 }

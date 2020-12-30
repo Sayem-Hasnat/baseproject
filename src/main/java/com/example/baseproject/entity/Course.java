@@ -12,6 +12,8 @@ public class Course {
     private long courseId;
     @Column
     private String courseName;
+    @Column
+    private String courseCode;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(name = "student_course",
